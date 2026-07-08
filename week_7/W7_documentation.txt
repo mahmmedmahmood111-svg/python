@@ -1,0 +1,20 @@
+WEEK 7 - DOCUMENTATION
+
+Bugs identified:
+
+1. Wrong function name in test file:
+   The test template called food_order(10, 2), but the actual function
+   name is calculate_total(). Calling the wrong name causes a NameError
+   and the program crashes. Fixed by importing and calling
+   calculate_total() correctly.
+
+2. Missing import in main.py:
+   main.py used calculate_total() without importing it from
+   food_order.py. Fixed by adding:
+   from food_order import calculate_total
+
+3. No input validation:
+   The program accepted invalid orders (negative or zero price/quantity).
+   Fixed by adding validation in calculate_total():
+   - price <= 0  -> returns "invalid price"
+   - quantity <= 0 -> returns "invalid quantity"
